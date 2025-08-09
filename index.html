@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday, Huncho!</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="overlay">
+    <div class="glass-box" id="glass-box">
+    <h1 style="color: rgb(92,71,58);">🌹🌹Happy Birthday, Huncho!🌹🌹</h1>
+    <p style="color: rgb(92,71,58);">
+
+        🎉🥳<b><i>Happy Birthday, twin!</i></b>🥳🎉<br>
+        Wow, I can't believe we've been friends for like 5 years now, I'm so sorry that i always missed your birthday. But today, nuh
+        uh, not today son. I marked the date on the calendar, I ain't forgetting it again, twin.<br>
+        Oh... y'know, I really enjoyed our gaming sessions, sharing our life stories, even being freaky together lol.
+        I really appreciate your presence in my life twin, you are my first overseas friend and even someone I can trust with everything that's going on in my life.
+        Thank you so much for buying Omori for me, even though I haven't got the time to really play it, but once I have the time, I will, I promise.
+        I couldn't think of anyting to give you since I'm broke and all, so I decided to make this little website for you!<br>
+        (sorry that i don't have much time to make this so this is all i can do)<br><br>
+        I hope you like this website, and I really wish you a very happy birthday.
+        I hope we will always be friends, and I hope we can meet irl one day.
+        I love you so much twin, thank you for always being my friend.<br>
+        <br>
+        <em>- Your twin, Arman.</em>
+
+    </p>
+    <div style="margin-top: 40px; text-align: center;"></div>
+
+        <!-- Move carousel inside glass-box, just under the button -->
+    <h2 style="color: rgb(92,71,58);">hachikuji slideshow:3</h2>
+    <div id="album-carousel" style="margin-top: 24px; display: flex; flex-direction: column; align-items: center;">
+        <div id="carousel-card" style="width: 320px; height: 320px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15); background: #fff; display: flex; align-items: center; justify-content: center;">
+            <img id="carousel-img" src="album/hachi-1.jpg" alt="Birthday Album" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
+    <script>
+    const albumImages = [
+        'album/hachi-1.jpg',
+        'album/hachi-2.jpg',
+        'album/hachi-3.jpg',
+        'album/hachi-4.jpg',
+        'album/hachi-5.jpg',
+        'album/hachi-6.jpg',
+        'album/hachi-7.jpg',
+        'album/hachi-8.jpg'
+    ];
+    let currentIndex = 0;
+    const imgEl = document.getElementById('carousel-img');
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % albumImages.length;
+        imgEl.src = albumImages[currentIndex];
+    }, 500);
+    </script>
+
+        <button id="fnaf-sound-btn" style="padding: 10px 20px; font-size: 1rem; background: #e3cfcf; color: #5c473a; border: none; border-radius: 8px; cursor: pointer;">
+            touch me twin
+        </button>
+        <audio id="fnaf-nose" src="songs/Fnaf nose honk.mp3"></audio>
+        <audio id="fnaf-yay" src="songs/fnaf yay.mp3"></audio>
+    </div>
+    <script>
+    document.getElementById('fnaf-sound-btn').addEventListener('click', function() {
+        const noseSound = document.getElementById('fnaf-nose');
+        const yaySound = document.getElementById('fnaf-yay');
+        // 2 in 10 chance
+        const playYay = Math.random() < 0.2;
+        [noseSound, yaySound].forEach(sound => { sound.pause(); sound.currentTime = 0; });
+        if (playYay) {
+            yaySound.play();
+        } else {
+            noseSound.play();
+        }
+    });
+    </script>
+    </div>
+  </main>
+  <script src="script.js" defer></script>
+<audio id="birthday-audio" src="songs/What's My Age Again - blink-182.mp3" loop autoplay></audio>
+<script>
+const audio = document.getElementById('birthday-audio');
+
+// Attempt to play audio after any user interaction (for browsers that block autoplay)
+window.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play().catch(() => {});
+    }
+});
+</script>

@@ -1,0 +1,50 @@
+:root {
+  --accent1: #f9c5d1;
+  --accent2: #f8f3d4;
+  --accent3: #d3f6db;
+  --accent4: #a6e3e9;
+  --accent5: #ffb347;
+  --glass-bg: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(255, 255, 255, 0.4);
+}
+body {
+  margin: 0;
+  height: 100vh;
+  background: url('hachikuji.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  overflow: hidden;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, rgba(249, 197, 209, 0.3), rgba(166, 227, 233, 0.3));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.glass-box {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  animation: float 6s ease-in-out infinite;
+}
+.glass-box h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.glass-box p {
+  font-size: 1.2rem;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

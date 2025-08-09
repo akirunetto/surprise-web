@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loading...</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    background: url('hachikuji.jpg') center/cover no-repeat;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    .loader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .spinner {
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+<div class="loader">
+    <div class="spinner" style="border-top: 6px solid rgb(92,71,58);"></div>
+    <h2 style="color: rgb(92,71,58);">
+        Wait for a bit twin<span id="dots">...</span>
+    </h2>
+    <script>
+        const dots = document.getElementById('dots');
+        let count = 0;
+        setInterval(() => {
+            count = (count + 1) % 4;
+            dots.textContent = '.'.repeat(count === 0 ? 3 : count);
+        }, 500);
+    </script></h2>
+  </div>
+  <script>
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 10000);
+  </script>
+</body>
+</html>
